@@ -44,7 +44,7 @@ ssh-copy-id root@<Your_server_master_ip>
 ```
 > Example:
 ```
-   : ssh-copy-id root@192.168.100.110 
+ssh-copy-id root@192.168.100.110 
 ```
 Replace <Your_server_master_ip> with  your server IP in the files listed below:
 
@@ -66,7 +66,7 @@ sed -i'bk' -e    's/server_master_ip/<Your_server_master_ip>/g'  inventory/hosts
 sed -i'bk' -e    's/server_master_ip/<Your_server_master_ip>/g' roles/cape/tasks/main.yml
 ```
 
-### Verify if the IP was updated properly
+### Verify the the IP was updated properly
 
 You should see the IP updated in these files:
 ```
