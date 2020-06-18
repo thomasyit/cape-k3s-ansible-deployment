@@ -14,7 +14,7 @@
     
 
 - pause:
-    seconds: 5
+    seconds: 15
 
 - name: create namespace
   shell: 
