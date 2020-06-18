@@ -144,7 +144,7 @@ features, please [create a new issue on GitHub][1] or connect with us over on Sl
 
 ## Reporting Bugs
 
-If you encounter bugs, please [create a new issue on GitHub](https://github.com/cape-sh/cape/issues/new) or talk to us
+If you encounter a bug, please [create a new issue on GitHub](https://github.com/cape-sh/cape/issues/new) or talk to us
 on our [`#general` Slack channel](https://capesh.slack.com). When reporting a bug please include the
 following information:
 
