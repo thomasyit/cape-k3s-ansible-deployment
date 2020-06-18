@@ -21,15 +21,15 @@ HOST - refers to the machine or server where Ansible exists
 If the HOST machine and the <Your_server_master_ip> machine is same, you can use 'localhost' instead of the machine/server IP.
 ```
 
-### Download this repo to HOST (host should already have Ansible and Git installed)
+### Download this repo to HOST (host should already have Ansible and GIT installed)
 
-To Install Ansible in your host:  
+To install Ansible:  
 https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
 
-To Install GIT: 
+To install GIT: 
 https://git-scm.com/downloads
 
-Then proceeed with the following: 
+Once Ansible and GIT are installed proceeed with the following: 
 ```
 git clone https://github.com/biqmind/Cape-K3S-ansible-deployment.git 
 ```
