@@ -1,27 +1,27 @@
-# Deploy CAPE and kubernetes with docker
+# Deploy CAPE and Kubernetes with Docker
 
 
-## What this playbook will do when you execute it :
+## When you execute this playbook, it will:
 
-1. It will configure all Prerequisites for CentOS7/RHEL7 eg: selinux , firewall disable etc..
-2. It will Autoconfigure all installable repo for Kubernetes
-    *For RHEL7 , please enable your Redhat subscription or connect to local repo so dependent packages can be installed
-3. It will install Packages like : k3s , Docker , crictl
-4. CAPE application will be installed
-5. It will enable access to CAPE gui via URL
+1. Configure all prerequisites for CentOS7/RHEL7 eg: selinux , firewall disable etc.
+2. Autoconfigure all installable repos for Kubernetes
+> *For RHEL7 , please enable your Redhat subscription or connect to a local repo so that dependent packages can be installed*
+3. Install packages like : k3s , Docker , crictl
+4. Install the CAPE application
+5. Enable access to CAPE GUI via URL
 
 
-# How to use this repo to deploy
+## How to use this repo to deploy
 
 Terminology
 ```
-HOST - refers to your laptop or server where ansible exists
-Your_server_master_ip - refers to your machine/server IP where you want CAPE and Kubernetes to be installed.
+HOST - refers to the machine or server where Ansible exists
+<Your_server_master_ip> - refers to the machine/server IP where you want to install CAPE and Kubernetes
 
-In case if your HOST and <Your_server_master_ip> is same machine instead of ip you can use:  localhost
+If the HOST machine and the <Your_server_master_ip> machine is same, you can use 'localhost' instead of the machine/server IP.
 ```
 
-### Download this repo to HOST.(Host should have Ansible and Git installed)
+### Download this repo to HOST (host should already have Ansible and Git installed)
 
 To Install Ansible in your host:  
 https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
@@ -29,39 +29,32 @@ https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.ht
 To Install GIT: 
 https://git-scm.com/downloads
 
-Then Proceeed with below: 
+Then proceeed with the following: 
 ```
 git clone https://github.com/biqmind/Cape-K3S-ansible-deployment.git 
 ```
->> change directory to the git repo directory.
-
+> Change directory to the git repo directory
 ```
 cd Cape-K3S-ansible-deployment/
 ```
 
-
-### Prepare password less root ssh to your <Your_server_master_ip> from your HOST  :
+### Prepare password less root ssh to your <Your_server_master_ip> from your HOST:
 ```
-
 ssh-copy-id root@<Your_server_master_ip>
 ```
 > Example:
 ```
    : ssh-copy-id root@192.168.100.110 
 ```
-
-
-Replace <Your_server_master_ip> with  your server ip in files below.
+Replace <Your_server_master_ip> with  your server IP in the files listed below:
 
 #### Linux OS :
 ```
 sed -i  's/server_master_ip/<Your_server_master_ip>/g'  inventory/hosts.ini
-
 sed -i  's/server_master_ip/<Your_server_master_ip>/g'  roles/cape/tasks/main.yml
 ```
 
-Example of above afetr replacing ip should look like this:
-
+After the replacing the IP, it should look like this:
 ```
 sed -i  's/server_master_ip/192.168.100.110/g'  inventory/hosts.ini 
 sed -i  's/server_master_ip/192.168.100.110/g'  roles/cape/tasks/main.yml 
@@ -70,59 +63,49 @@ sed -i  's/server_master_ip/192.168.100.110/g'  roles/cape/tasks/main.yml
 #### MAC OS:
 ```
 sed -i'bk' -e    's/server_master_ip/<Your_server_master_ip>/g'  inventory/hosts.ini  
- 
 sed -i'bk' -e    's/server_master_ip/<Your_server_master_ip>/g' roles/cape/tasks/main.yml
 ```
 
+### Verify if the IP was updated properly
 
-## Verify if IP was updated properly in both files:
-
+You should see the IP updated in these files:
 ```
 grep -i <Your_server_master_ip> inventory/hosts.ini  
 
 grep -i <Your_server_master_ip> roles/cape/tasks/main.yml
 ```
 
-You should see the ip updated in these files.
+### Issues with updating the IP
 
-## Got issues in updating IP ??
-
-Replace <Your_server_master_ip> (search for string "server_master_ip" ) manually in below 2 location :
+Replace <Your_server_master_ip> (search for string "server_master_ip" ) manually in the following 2 locations:
 
 > inventory/hosts.ini  (Line number 2)
 
 > roles/cape/tasks/main.yml (Line number 27)
 
-
-## Run End to End deployment now to get a running CAPE
+### Now run an end-to-end deployment to get CAPE running
 ```
 ansible-playbook site.yml
-
 ```
-## Wait for few minutes till you see all pods are up
 
+### Wait for a few minutes until you see that all pods are up, then
 ```
 ssh root@<your_server_ip>
 kubectl get pods -n cape
 ```
+Make sure all pods are in a healthy state else kill any unhealthy pods and they will restart in few seconds
 
-Make sure all pods are in healthy state else kill that pod and it will restart in few seconds
-
-# Now Access Cape GUI 
-
+### Now access Cape GUI 
 
 > URL
 ```
-
  http://<Your_server_ip>.nip.io/
 ```
+** All CAPE documentation is available [here](https://docs.cape.sh/docs/) **
 
-** Refer to cape documentation on how to use CAPE **
+### To reset everything 
 
-
-# Encountered issues and want to reset everything 
-
-> Run this playbook to uninstall kubernetes and crictl
+> Run this playbook to uninstall Kubernetes and crictl
 ```
  ansible-playbook reset.yml
 ```
