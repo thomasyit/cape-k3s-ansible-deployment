@@ -3,7 +3,7 @@
 
 ## When you execute this playbook, it will:
 
-1. Configure all prerequisites for CentOS7/RHEL7 eg: SElinux , disable firewall etc.
+1. Configure all prerequisites for CentOS7/RHEL7 eg: SELinux , disable firewall etc.
 2. Autoconfigure all installable repos for Kubernetes
 > *For RHEL7, please enable your Red Hat subscription or connect to a local repo so that dependant packages can be installed*
 3. Install packages like k3s , Docker , crictl
