@@ -6,7 +6,7 @@
 1. Configure all prerequisites for CentOS7/RHEL7 eg: selinux , firewall disable etc.
 2. Autoconfigure all installable repos for Kubernetes
 > *For RHEL7, please enable your Red Hat subscription or connect to a local repo so that dependant packages can be installed*
-3. Install packages like : k3s , Docker , crictl
+3. Install packages like k3s , Docker , crictl
 4. Install the CAPE application
 5. Enable access to CAPE GUI via URL
 
@@ -112,7 +112,7 @@ kubectl get pods -n cape
 Make sure all pods are in a healthy state else kill any unhealthy pods and they will restart in few seconds
 
 
-### Now access Cape GUI 
+### Now access the CAPE GUI 
 
 > URL
 ```
