@@ -136,10 +136,8 @@ We have a getting started tutorial in our  [docs](https://docs.cape.sh/docs/acce
 We very appreciate your feedback and participation.
 
 If you want to get in touch with us and discuss about improvements and new
-features, please create a new issue on GitHub or connect with us over the
-mailing list or Slack:
+features, please create a new issue on GitHub or connect with us over Slack:
 
-* [CAPE mailing list](https://capesh.slack.com/)
 * [`#general` channel](https://capesh.slack.com)
 
 ## Reporting Bugs
