@@ -129,21 +129,23 @@ ansible-playbook reset.yml
 ```
 
 ## Getting Started with CAPE
-We have a getting started tutorial in our  [docs](https://docs.cape.sh/docs/accessing_cape)
+
+Get started quickly using this [tutorial](https://docs.cape.sh/docs/simple-install)
+
 
 ## Getting Involved
 
-We very appreciate your feedback and participation.
+We appreciate your feedback and active participation.
 
-If you want to get in touch with us and discuss about improvements and new
-features, please create a new issue on GitHub or connect with us over Slack:
+If you want to get in touch with us to discuss improvements and new
+features, please [create a new issue on GitHub][1] or connect with us over on Slack:
 
-* [`#general` channel](https://capesh.slack.com)
+* [`#general` Slack channel](https://capesh.slack.com)
 
 ## Reporting Bugs
 
-If you encounter issues, please [create a new issue on GitHub](https://github.com/cape-sh/cape-k3s-ansible-deployment/issues/new) or talk to us
-on the [`#general` Slack channel](https://capesh.slack.com). When reporting a bug please include the
+If you encounter bugs, please [create a new issue on GitHub](https://github.com/cape-sh/cape/issues/new) or talk to us
+on our [`#general` Slack channel](https://capesh.slack.com). When reporting a bug please include the
 following information:
 
 
