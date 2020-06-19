@@ -1,5 +1,16 @@
 # Deploy CAPE and Kubernetes with Docker
 
+# Let's see what the Playbook Roles are doing:
+
+ Roles and description:
+ 1. Prereq: PreRequisite config at os layer
+ 2. Download: Downloads all the relevant packages
+ 3. K3S : Installs k3s master on centos7/RHEL7 
+ 4. Cape : Installs the Cape SAAS operator 
+ 5. Reset : Uninstall kubernetes packages from your machine
+ 
+
+
 
 ## When you execute this playbook, it will:
 
