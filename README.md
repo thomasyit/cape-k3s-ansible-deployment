@@ -1,16 +1,18 @@
 # Deploy CAPE and Kubernetes with Docker
 
+<p align="center" style="background-color:#23327c">
+  <img src="assets/logo.png" height="250px" width="400px"/>
+</p>
+
 # Let's see what the Playbook Roles are doing:
 
  Roles and description:
  1. Prereq: PreRequisite config at os layer
- 2. Download: Downloads all the relevant packages
+ 2. Download: Downloads all the relevant packages and scripts
  3. K3S : Installs k3s master on centos7/RHEL7 
  4. Cape : Installs the Cape SAAS operator 
- 5. Reset : Uninstall kubernetes packages from your machine
+ 5. Reset : Uninstall kubernetes packages from your machine 
  
-
-
 
 ## When you execute this playbook, it will:
 
@@ -31,6 +33,8 @@ HOST - refers to the machine or server where Ansible exists
 
 If the HOST machine and the <Your_server_master_ip> machine is same, you can use 'localhost' instead of the machine/server IP.
 ```
+#### Recommended System requirements
+
 
 
 ### Download this repo to HOST (host should already have Ansible and GIT installed)
