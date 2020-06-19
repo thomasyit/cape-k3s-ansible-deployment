@@ -45,11 +45,11 @@ cd Cape-K3S-ansible-deployment/
 
 ### Prepare password less root ssh to your <Your_server_master_ip> from your HOST:
 
-```
+```bash
 ssh-copy-id root@<Your_server_master_ip>
 ```
 > Example:
-```
+```bash
 ssh-copy-id root@192.168.100.110 
 ```
 
@@ -57,14 +57,14 @@ Replace <Your_server_master_ip> with  your server IP in the files listed below:
 
 #### Linux OS :
 
-```
+```bash
 sed -i  's/server_master_ip/<Your_server_master_ip>/g'  inventory/hosts.ini
 sed -i  's/server_master_ip/<Your_server_master_ip>/g'  roles/cape/tasks/main.yml
 ```
 
 After the replacing the IP, it should look like this:
 
-```
+```bash
 sed -i  's/server_master_ip/192.168.100.110/g'  inventory/hosts.ini 
 sed -i  's/server_master_ip/192.168.100.110/g'  roles/cape/tasks/main.yml 
 ```
@@ -80,7 +80,7 @@ sed -i'bk' -e    's/server_master_ip/<Your_server_master_ip>/g' roles/cape/tasks
 ### Verify the the IP was updated properly
 
 You should see the IP updated in these files:
-```
+```bash
 grep -i <Your_server_master_ip> inventory/hosts.ini  
 
 grep -i <Your_server_master_ip> roles/cape/tasks/main.yml
@@ -98,14 +98,14 @@ Replace <Your_server_master_ip> (search for string "server_master_ip" ) manually
 
 ### Now run an end-to-end deployment to get CAPE running
 
-```
+```bash
 ansible-playbook site.yml
 ```
 
 
 ### Wait for a few minutes until you see that all pods are up, then
 
-```
+```bash
 ssh root@<your_server_ip>
 kubectl get pods -n cape
 ```
@@ -124,7 +124,7 @@ http://<Your_server_ip>.nip.io/
 ### To reset everything 
 
 > Run this playbook to uninstall Kubernetes and crictl
-```
+```bash
 ansible-playbook reset.yml
 ```
 
