@@ -14,13 +14,15 @@
     
 
 - pause:
-    seconds: 15
+    seconds: 10
 
 - name: create namespace
   shell: 
     cmd: "kubectl create ns cape &"
   ignore_errors: yes
-    
+
+- pause:
+    seconds: 10
 
 - name: Replace IPs
   vars:
