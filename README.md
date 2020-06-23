@@ -1,7 +1,7 @@
 # Deploy CAPE and Kubernetes with Docker
 
 <p align="center" style="background-color:#23327c">
-  <img src="assets/logo.png" height="250px" width="400px"/>
+  <img src="https://raw.githubusercontent.com/cape-sh/cape/master/assets/logo.png" height="250px" width="400px"/>
 </p>
 
 # Let's see what the Playbook Roles are doing:
