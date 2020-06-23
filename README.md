@@ -15,22 +15,23 @@ Server Internet access : yes
 ```
 ---
 
-# How to deploy CAPE SAAS
+# Deploying CAPE SAAS
 
-> Do the below steps as "root" user in the machine where you want to deploy.
+You can deploy CAPE through a local private IP env or public IP
 
-Do you want to access CapeUI with local private IP env.
+<b> For Local Private IP env </b>
 
->   Eg: If you and your VM is at home and you want IP like 192.168.1.7 to access
- 
+<b>Note</b>: Perform the following steps as "root" user in the machine where you want to deploy. 
+
+If your VM is located at your home and you want IP address 192.168.1.7 to access, enter the following command:
+
 ```bash
 wget https://raw.githubusercontent.com/cape-sh/cape-k3s-ansible-deployment/master/script/capesaaPvtIP.sh
 sh capesaaPvtIP.sh
 ```
+<b> For Public IP env </b>
 
-Do you want to access CapeUI with Public IP env.
-
->   Eg: If your VM is on cloud and have public ip 
+If your VM is on cloud and have public ip, enter the following command 
 
 ```bash
 wget https://raw.githubusercontent.com/cape-sh/cape-k3s-ansible-deployment/master/script/capesaasPubIP.sh
@@ -38,7 +39,7 @@ sh capesaasPubIP.sh
 ```
 ===
 
-### Now access the CAPE GUI 
+### Accessing CAPE GUI 
 
 Service may take 1-5 mins to come up based on server config and internet bandwidth.
 
@@ -52,7 +53,7 @@ http://<Your_server_ip>.nip.io/
 
 ===
 
-### What the different Ansible Roles do:
+### Ansible Roles in CAPE:
 
 ```
  Ansible Roles :
@@ -73,9 +74,9 @@ Login as root to your machine
 ```bash
 kubectl get pods -n cape
 ```
-Make sure all pods are in a healthy state else kill any unhealthy pods and they will restart in few seconds
+Make sure all pods are in a healthy state else kill any unhealthy pods and they will restart in few seconds.
 
-### To RESET everything  using playbook
+### Reset using playbook
 
 Login as root to your machine
 
