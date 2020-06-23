@@ -13,16 +13,13 @@
       dest: /tmp/crd-install.yaml
     
 
-- pause:
-    seconds: 10
-
 - name: create namespace
   shell: 
     cmd: "kubectl create ns cape &"
   ignore_errors: yes
 
 - pause:
-    seconds: 10
+    seconds: 3
 
 - name: Replace IPs
   vars:
