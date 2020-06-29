@@ -4,7 +4,7 @@
   <img src="https://raw.githubusercontent.com/cape-sh/cape/master/assets/logo.png" height="250px" width="400px"/>
 </p>
 
-#### Recommended System requirements
+#### Recommended system requirements
 
 ```
 OS: Centos 7.3/7.4/7.5  
@@ -15,11 +15,11 @@ Server Internet access : yes
 ```
 ---
 
-# How to deploy CAPE SAAS
+# How to deploy CAPE SAAS`
 
-> Do the below steps as "root" user in the machine where you want to deploy.
+> Perform the following steps as "root" user in the machine where you want to deploy.
 
-Do you want to access CapeUI with local private IP env.
+Using local private IP env to access CapeUI.
 
 >   Eg: If you and your VM is at home and you want IP like 192.168.1.7 to access
  
@@ -28,7 +28,7 @@ wget https://raw.githubusercontent.com/cape-sh/cape-k3s-ansible-deployment/maste
 sh capesaaPvtIP.sh
 ```
 
-Do you want to access CapeUI with Public IP env.
+Using public IP env to access CapeUI.
 
 >   Eg: If your VM is on cloud and have public ip 
 
@@ -38,9 +38,9 @@ sh capesaasPubIP.sh
 ```
 ===
 
-### Now access the CAPE GUI 
+### How to access CAPE GUI 
 
-Service may take 1-5 mins to come up based on server config and internet bandwidth.
+Service may take 1-5 mins to come up based on server config and internet bandwidth. Note: If you need more than 10 nodes, please contact connect@biqmind.com for a trial license key.
 
 > URL
 
@@ -52,7 +52,7 @@ http://<Your_server_ip>.nip.io/
 
 ===
 
-### What the different Ansible Roles do:
+### Ansible Roles in CAPE:
 
 ```
  Ansible Roles :
@@ -66,16 +66,7 @@ http://<Your_server_ip>.nip.io/
 
 ---
 
-### Troubleshooting 
-
-Login as root to your machine
-
-```bash
-kubectl get pods -n cape
-```
-Make sure all pods are in a healthy state else kill any unhealthy pods and they will restart in few seconds
-
-### To RESET everything  using playbook
+### How to reset everything using playbook
 
 Login as root to your machine
 
@@ -87,27 +78,22 @@ ansible-playbook reset.yml
 ```
 > "cape-k3s-ansible-deployment" directory is located where capesaasPubIP.sh or capesaasPvtIP.sh script was downloaded 
 
+### Troubleshooting 
 
+Login as root to your machine
 
-## Getting Started with CAPE
+```bash
+kubectl get pods -n cape
+```
+Make sure all pods are in a healthy state else kill any unhealthy pods and they will restart in few seconds
+
+## Getting started with CAPE
 
 Get started quickly using this [tutorial](https://docs.cape.sh/docs/simple-install)
 
-
-## Getting Involved
-
-We appreciate your feedback and active participation.
-
-If you want to get in touch with us to discuss improvements and new
-features, please [create a new issue on GitHub][1] or connect with us over on Slack:
-
-* [`#general` Slack channel](https://capesh.slack.com)
-
-## Reporting Bugs
-
-If you encounter a bug, please [create a new issue on GitHub](https://github.com/cape-sh/cape/issues/new) or talk to us
-on our [`#general` Slack channel](https://capesh.slack.com). When reporting a bug please include the
-following information:
+## How to find us?
+In case of any question or issue, please raise a (GH issue)[https://github.com/cape-sh/cape/issues/new/choose], or talk to us
+on our [`#general` Slack channel](https://capesh.slack.com), or send an (email)[cloudnative@biqmind.com]
 
 
 
